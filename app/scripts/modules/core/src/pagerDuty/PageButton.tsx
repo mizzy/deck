@@ -25,8 +25,8 @@ export class PageButton extends React.Component<IPageButtonProps, IPageButtonSta
     };
   }
 
-  public componentWillReceiveProps(nextProps: IPageButtonProps): void {
-    if (nextProps.forceOpen && !this.state.showModal) {
+  public componentDidUpdate(): void {
+    if (this.props.forceOpen && !this.state.showModal) {
       this.setState({ showModal: true });
     }
   }

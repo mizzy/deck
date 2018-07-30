@@ -31,10 +31,10 @@ export class DataSourceEntry extends React.Component<IDataSourceEntryProps, IDat
     this.configureSubscriptions(this.props);
   }
 
-  public componentWillReceiveProps(nextProps: IDataSourceEntryProps) {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
     this.clearSubscriptions();
-    this.configureSubscriptions(nextProps);
+    this.configureSubscriptions(this.props);
   }
 
   private configureSubscriptions(props: IDataSourceEntryProps) {

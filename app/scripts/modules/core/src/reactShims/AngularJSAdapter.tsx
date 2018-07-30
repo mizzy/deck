@@ -19,9 +19,9 @@ export class AngularJSAdapter extends React.Component<IRenderAngularJSProps> {
     super(props);
   }
 
-  public componentWillReceiveProps(nextProps: IRenderAngularJSProps) {
+  public componentDidUpdate(): void {
     if (this.$scope) {
-      this.$scope.props = nextProps;
+      this.$scope.props = this.props;
     }
   }
 

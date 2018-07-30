@@ -36,8 +36,8 @@ export class LoadBalancerServerGroup extends React.Component<
     };
   }
 
-  public componentWillReceiveProps(nextProps: ILoadBalancerServerGroupProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public render(): React.ReactElement<LoadBalancerServerGroup> {

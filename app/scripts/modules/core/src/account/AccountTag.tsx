@@ -26,8 +26,8 @@ export class AccountTag extends React.Component<IAccountTagProps, IAccountTagSta
     this.updateAccount(this.props.account);
   }
 
-  public componentWillReceiveProps(nextProps: IAccountTagProps): void {
-    this.updateAccount(nextProps.account);
+  public componentDidUpdate(): void {
+    this.updateAccount(this.props.account);
   }
 
   private updateAccount(account: string) {

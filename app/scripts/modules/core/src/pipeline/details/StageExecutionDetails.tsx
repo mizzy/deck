@@ -207,7 +207,7 @@ export class StageExecutionDetails extends React.Component<IStageExecutionDetail
     this.updateStage();
   }
 
-  public componentWillReceiveProps() {
+  public componentDidUpdate(): void {
     this.updateStage();
   }
 

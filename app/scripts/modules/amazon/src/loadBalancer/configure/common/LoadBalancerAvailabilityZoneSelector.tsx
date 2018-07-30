@@ -29,9 +29,9 @@ export class LoadBalancerAvailabilityZoneSelector extends React.Component<
     this.setDefaultZones(this.props);
   }
 
-  public componentWillReceiveProps(nextProps: ILoadBalancerAvailabilityZoneSelectorProps): void {
-    if (nextProps.region !== this.props.region || nextProps.credentials !== this.props.credentials) {
-      this.setDefaultZones(nextProps);
+  public componentDidUpdate(prevProps: ILoadBalancerAvailabilityZoneSelectorProps): void {
+    if (this.props.region !== prevProps.region || this.props.credentials !== prevProps.credentials) {
+      this.setDefaultZones(this.props);
     }
   }
 

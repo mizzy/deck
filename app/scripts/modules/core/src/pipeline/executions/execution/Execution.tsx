@@ -185,11 +185,11 @@ export class Execution extends React.Component<IExecutionProps, IExecutionState>
     );
   }
 
-  public componentWillReceiveProps(nextProps: IExecutionProps): void {
-    if (nextProps.execution !== this.props.execution) {
-      this.runningTime.checkStatus(nextProps.execution);
+  public componentDidUpdate(prevProps: IExecutionProps): void {
+    if (this.props.execution !== prevProps.execution) {
+      this.runningTime.checkStatus(this.props.execution);
       this.setState({
-        showingDetails: this.invalidateShowingDetails(nextProps),
+        showingDetails: this.invalidateShowingDetails(this.props),
       });
     }
   }

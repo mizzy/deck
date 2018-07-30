@@ -45,9 +45,9 @@ export class ApplicationHeader extends React.Component<IApplicationHeaderProps, 
     };
   }
 
-  public componentWillReceiveProps(nextProps: IApplicationHeaderProps) {
-    this.setState(this.parseCategories(nextProps));
-    this.configureApplicationEventListeners(nextProps.app);
+  public componentDidUpdate(): void {
+    this.setState(this.parseCategories(this.props));
+    this.configureApplicationEventListeners(this.props.app);
   }
 
   private configureApplicationEventListeners(app: Application): void {

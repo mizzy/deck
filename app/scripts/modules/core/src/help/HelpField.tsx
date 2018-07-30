@@ -44,7 +44,7 @@ export class HelpField extends React.Component<IHelpFieldProps, IState> {
     };
   }
 
-  public componentWillReceiveProps(): void {
+  public componentDidUpdate(): void {
     this.setState(this.getState());
   }
 

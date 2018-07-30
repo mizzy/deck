@@ -42,7 +42,7 @@ export class RunJobExecutionDetails extends React.Component<
     this.mounted = false;
   }
 
-  public componentWillReceiveProps() {
+  public componentDidUpdate(): void {
     this.setEndpoint();
   }
 

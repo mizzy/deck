@@ -100,7 +100,7 @@ export class ServerGroupDetailsWrapper extends React.Component<
     this.getServerGroupDetailsTemplate();
   }
 
-  public componentWillReceiveProps(): void {
+  public componentDidUpdate(): void {
     this.getServerGroupDetailsTemplate();
   }
 

@@ -61,8 +61,8 @@ export class CategorizedNotifications extends React.Component<
     };
   }
 
-  public componentWillReceiveProps(props: ICategorizedNotificationsProps): void {
-    const categorizedAlerts = this.categorizeNotifications(props.notifications);
+  public componentDidUpdate(): void {
+    const categorizedAlerts = this.categorizeNotifications(this.props.notifications);
     this.setState({ categorizedAlerts });
   }
 

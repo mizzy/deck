@@ -34,8 +34,8 @@ export class ApplicationRefresher extends React.Component<IApplicationRefresherP
     });
   }
 
-  public componentWillReceiveProps(nextProps: IApplicationRefresherProps) {
-    this.configureApplicationEventListeners(nextProps.app);
+  public componentDidUpdate(): void {
+    this.configureApplicationEventListeners(this.props.app);
   }
 
   private configureApplicationEventListeners(app: Application): void {

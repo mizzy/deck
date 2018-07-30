@@ -30,9 +30,9 @@ export class VpcTag extends React.Component<IVpcTagProps, IVpcTagState> {
     }
   }
 
-  public componentWillReceiveProps(nextProps: IVpcTagProps): void {
-    if (nextProps.vpcId !== this.props.vpcId) {
-      this.updateState(nextProps);
+  public componentDidUpdate(prevProps: IVpcTagProps): void {
+    if (this.props.vpcId !== prevProps.vpcId) {
+      this.updateState(this.props);
     }
   }
 

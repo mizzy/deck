@@ -32,8 +32,8 @@ export class StepExecutionDetails extends React.Component<
     this.syncDetails(this.state.configSections);
   }
 
-  public componentWillReceiveProps(nextProps: IExecutionDetailsComponentProps): void {
-    const configSections = nextProps.detailsSections.map(s => s.title);
+  public componentDidUpdate(): void {
+    const configSections = this.props.detailsSections.map(s => s.title);
     if (!isEqual(this.state.configSections, configSections)) {
       this.setState({ configSections });
       this.syncDetails(configSections);

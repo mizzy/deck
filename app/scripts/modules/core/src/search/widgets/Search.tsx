@@ -57,8 +57,8 @@ export class Search extends React.Component<ISearchProps, ISearchState> {
     };
   }
 
-  public componentWillReceiveProps(props: ISearchProps) {
-    const tags = this.buildTagsFromParams(props.params, this.state.tags);
+  public componentDidUpdate(): void {
+    const tags = this.buildTagsFromParams(this.props.params, this.state.tags);
     this.setState({ tags });
   }
 

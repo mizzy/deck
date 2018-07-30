@@ -42,8 +42,8 @@ export class EphemeralPopover extends React.Component<IEphemeralPopoverProps, IE
     );
   };
 
-  public componentWillReceiveProps(nextProps: IEphemeralPopoverProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public render(): React.ReactElement<EphemeralPopover> {

@@ -91,9 +91,9 @@ export function overridableComponent<P extends IOverridableProps, T extends Reac
       this.destroy$.next();
     }
 
-    public componentWillReceiveProps(nextProps: P) {
-      const { accountId } = nextProps;
-      if (this.props.accountId !== accountId) {
+    public componentDidUpdate(prevProps: P): void {
+      const { accountId } = this.props;
+      if (prevProps.accountId !== accountId) {
         this.account$.next(accountId);
       }
     }

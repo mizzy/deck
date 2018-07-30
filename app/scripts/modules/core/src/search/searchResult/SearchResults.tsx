@@ -28,8 +28,8 @@ export interface ISearchResultsState {
 export class SearchResults extends React.Component<ISearchResultsProps, ISearchResultsState> {
   public state = { active: null as any };
 
-  public componentWillReceiveProps(newProps: ISearchResultsProps): void {
-    const { resultSets, selectedTab } = newProps;
+  public componentDidUpdate(): void {
+    const { resultSets, selectedTab } = this.props;
     const active: SearchResultType = resultSets.map(x => x.type).find(type => type.id === selectedTab);
     this.setState({ active });
   }

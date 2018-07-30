@@ -77,8 +77,8 @@ export class PipelineTriggerTemplate extends React.Component<
       .then(this.executionLoadSuccess, this.executionLoadFailure);
   };
 
-  public componentWillReceiveProps(nextProps: ITriggerTemplateComponentProps) {
-    if (nextProps.command !== this.props.command) {
+  public componentDidUpdate(prevProps: ITriggerTemplateComponentProps) {
+    if (this.props.command !== prevProps.command) {
       this.initialize();
     }
   }

@@ -31,9 +31,9 @@ export class CloudProviderLogo extends React.Component<ICloudProviderLogoProps, 
     return {};
   }
 
-  public componentWillReceiveProps(nextProps: ICloudProviderLogoProps): void {
-    if (nextProps.showTooltip !== this.props.showTooltip) {
-      this.setState(this.getState(nextProps));
+  public componentDidUpdate(prevProps: ICloudProviderLogoProps): void {
+    if (this.props.showTooltip !== prevProps.showTooltip) {
+      this.setState(this.getState(this.props));
     }
   }
 

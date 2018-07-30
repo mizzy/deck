@@ -26,12 +26,12 @@ export class Tooltip extends React.Component<ITooltipProps> {
     }
   };
 
-  public componentWillReceiveProps(nextProps: ITooltipProps): void {
+  public componentDidUpdate(prevProps: ITooltipProps): void {
     if (this.popover) {
-      if (this.props.value && !nextProps.value) {
+      if (prevProps.value && !this.props.value) {
         this.popover.hide();
       }
-      if (!this.props.value && nextProps.value) {
+      if (!prevProps.value && this.props.value) {
         this.popover.show();
       }
     }

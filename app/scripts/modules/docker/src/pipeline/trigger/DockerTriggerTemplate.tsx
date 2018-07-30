@@ -112,8 +112,8 @@ export class DockerTriggerTemplate extends React.Component<
     this.searchTags();
   };
 
-  public componentWillReceiveProps(nextProps: ITriggerTemplateComponentProps) {
-    if (nextProps.command !== this.props.command) {
+  public componentDidUpdate(prevProps: ITriggerTemplateComponentProps): void {
+    if (this.props.command !== prevProps.command) {
       this.initialize();
     }
   }

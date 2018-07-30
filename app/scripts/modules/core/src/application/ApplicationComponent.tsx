@@ -22,9 +22,9 @@ export class ApplicationComponent extends React.Component<IApplicationComponentP
     this.unmountApplication(this.props.app);
   }
 
-  public componentWillReceiveProps(nextProps: IApplicationComponentProps): void {
-    this.unmountApplication(this.props.app);
-    this.mountApplication(nextProps.app);
+  public componentDidUpdate(prevProps: IApplicationComponentProps): void {
+    this.unmountApplication(prevProps.app);
+    this.mountApplication(this.props.app);
   }
 
   private mountApplication(app: Application) {

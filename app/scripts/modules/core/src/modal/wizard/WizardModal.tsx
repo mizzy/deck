@@ -90,7 +90,7 @@ export class WizardModal<T extends FormikValues> extends React.Component<IWizard
     this.setState({ pages: this.getVisiblePageNames(), currentPage: this.pages[pages[0]] });
   }
 
-  public componentWillReceiveProps(): void {
+  public componentDidUpdate(): void {
     this.setState({ pages: this.getVisiblePageNames() });
   }
 

@@ -36,8 +36,8 @@ export class ExecutionDetailsSectionNav extends React.Component<
     return { activeSection };
   }
 
-  public componentWillReceiveProps(nextProps: IExecutionDetailsSectionNavProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public componentWillUnmount(): void {

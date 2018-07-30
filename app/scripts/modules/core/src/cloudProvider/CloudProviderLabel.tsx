@@ -22,9 +22,9 @@ export class CloudProviderLabel extends React.Component<ICloudProviderLabelProps
     return CloudProviderRegistry.getValue(provider, 'name') || provider;
   }
 
-  public componentWillReceiveProps(nextProps: ICloudProviderLabelProps): void {
+  public componentDidUpdate(): void {
     this.setState({
-      label: this.getProviderLabel(nextProps.provider),
+      label: this.getProviderLabel(this.props.provider),
     });
   }
 

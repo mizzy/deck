@@ -36,8 +36,8 @@ export class ScalingPoliciesDetailsSection extends React.Component<
     return { scalingPoliciesDisabled };
   }
 
-  public componentWillReceiveProps(nextProps: IAmazonServerGroupDetailsSectionProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public render(): JSX.Element {

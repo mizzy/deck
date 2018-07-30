@@ -40,8 +40,8 @@ export class PackageDetailsSection extends React.Component<
     return { commitHash, jenkinsLink };
   }
 
-  public componentWillReceiveProps(nextProps: IAmazonServerGroupDetailsSectionProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public render(): JSX.Element {

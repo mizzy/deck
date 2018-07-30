@@ -126,8 +126,8 @@ const AddHealthCounts = (
       this.applyServerGroups(this.props.resultSet);
     }
 
-    public componentWillReceiveProps(nextProps: IServerGroupDataProps) {
-      this.applyServerGroups(nextProps.resultSet);
+    public componentDidUpdate(): void {
+      this.applyServerGroups(this.props.resultSet);
     }
 
     public componentWillUnmount() {

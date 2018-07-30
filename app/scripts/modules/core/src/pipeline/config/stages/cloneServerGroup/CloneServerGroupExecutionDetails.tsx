@@ -71,9 +71,9 @@ export class CloneServerGroupExecutionDetails extends React.Component<
     this.addDeployedArtifacts(this.props);
   }
 
-  public componentWillReceiveProps(nextProps: IExecutionDetailsSectionProps) {
-    if (nextProps.stage !== this.props.stage) {
-      this.addDeployedArtifacts(nextProps);
+  public componentDidUpdate(prevProps: IExecutionDetailsSectionProps): void {
+    if (this.props.stage !== prevProps.stage) {
+      this.addDeployedArtifacts(this.props);
     }
   }
 

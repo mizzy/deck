@@ -15,8 +15,6 @@ import {
   TaskMonitor,
 } from '@spinnaker/core';
 
-import { IPageButtonProps } from './PageButton';
-
 export interface IPageModalProps {
   applications?: Application[];
   services: IPagerDutyService[];
@@ -50,9 +48,9 @@ export class PageModal extends React.Component<IPageModalProps, IPageModalState>
     Object.assign(this.$uibModalInstanceEmulation, { deferred });
   }
 
-  public componentWillReceiveProps(nextProps: IPageButtonProps): void {
-    if (nextProps.services.length !== this.state.pageCount) {
-      this.setState({ pageCount: nextProps.services.length });
+  public componentDidUpdate(): void {
+    if (this.props.services.length !== this.state.pageCount) {
+      this.setState({ pageCount: this.props.services.length });
     }
   }
 

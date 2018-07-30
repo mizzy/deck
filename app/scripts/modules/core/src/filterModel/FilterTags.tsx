@@ -33,8 +33,8 @@ export class FilterTags extends React.Component<IFilterTagsProps, IFilterTagsSta
     };
   }
 
-  public componentWillReceiveProps(newProps: IFilterTagsProps) {
-    this.setState({ tags: newProps.tags });
+  public componentDidUpdate(): void {
+    this.setState({ tags: this.props.tags });
   }
 
   private clearAllFilters = (): void => {

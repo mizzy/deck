@@ -34,8 +34,8 @@ export class LaunchConfigDetailsSection extends React.Component<
     return image;
   }
 
-  public componentWillReceiveProps(nextProps: IAmazonServerGroupDetailsSectionProps): void {
-    this.setState({ image: this.getImage(nextProps.serverGroup) });
+  public componentDidUpdate(): void {
+    this.setState({ image: this.getImage(this.props.serverGroup) });
   }
 
   public render(): JSX.Element {

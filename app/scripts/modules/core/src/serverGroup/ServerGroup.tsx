@@ -136,8 +136,8 @@ export class ServerGroup extends React.Component<IServerGroupProps, IServerGroup
     this.serverGroupsSubscription.unsubscribe();
   }
 
-  public componentWillReceiveProps(nextProps: IServerGroupProps) {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public loadDetails(event: React.MouseEvent<any>): void {

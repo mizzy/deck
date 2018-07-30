@@ -56,8 +56,8 @@ export class InstanceDetails extends React.Component<IInstanceDetailsProps, IIns
     this.props$.next(this.props);
   }
 
-  public componentWillReceiveProps(nextProps: IInstanceDetailsProps) {
-    this.props$.next(nextProps);
+  public componentDidUpdate(): void {
+    this.props$.next(this.props);
   }
 
   public componentWillUnmount() {

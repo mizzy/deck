@@ -41,8 +41,8 @@ export class GroupedNotificationList extends React.Component<
     };
   }
 
-  public componentWillReceiveProps(newProps: IGroupedNotificationListProps): void {
-    this.setState({ alertsByMessage: this.getAlertsByMessage(newProps.notifications) });
+  public componentDidUpdate(): void {
+    this.setState({ alertsByMessage: this.getAlertsByMessage(this.props.notifications) });
   }
 
   private getAlertsByMessage(notifications: INotification[]): IMessageNotifications[] {

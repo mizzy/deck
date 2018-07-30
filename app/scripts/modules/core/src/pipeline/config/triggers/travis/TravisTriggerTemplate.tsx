@@ -91,8 +91,8 @@ export class TravisTriggerTemplate extends React.Component<
     IgorService.listBuildsForJob(trigger.master, trigger.job).then(this.buildLoadSuccess, this.buildLoadFailure);
   };
 
-  public componentWillReceiveProps(nextProps: ITriggerTemplateComponentProps) {
-    if (nextProps.command !== this.props.command) {
+  public componentDidUpdate(prevProps: ITriggerTemplateComponentProps) {
+    if (this.props.command !== prevProps.command) {
       this.initialize();
     }
   }

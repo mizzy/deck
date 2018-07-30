@@ -21,8 +21,8 @@ export class SpelNumberInput extends React.Component<INumberInputProps, INumberI
     };
   }
 
-  public componentWillReceiveProps(nextProps: INumberInputProps) {
-    const expressionActive = isString(nextProps.value);
+  public componentDidUpdate(): void {
+    const expressionActive = isString(this.props.value);
     if (this.state.expressionActive !== expressionActive) {
       this.setState({ expressionActive });
     }

@@ -54,7 +54,7 @@ export class SkipWait extends React.Component<ISkipWaitProps, ISkipWaitState> {
     });
   };
 
-  public componentWillReceiveProps() {
+  public componentDidUpdate(): void {
     this.runningTime.checkStatus();
   }
 

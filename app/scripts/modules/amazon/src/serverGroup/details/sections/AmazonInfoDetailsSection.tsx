@@ -44,8 +44,8 @@ export class AmazonInfoDetailsSection extends React.Component<
     return changeConfig;
   }
 
-  public componentWillReceiveProps(nextProps: IAmazonServerGroupDetailsSectionProps) {
-    this.setState({ changeConfig: this.getChangeConfig(nextProps.serverGroup) });
+  public componentDidUpdate(): void {
+    this.setState({ changeConfig: this.getChangeConfig(this.props.serverGroup) });
   }
 
   public render(): JSX.Element {

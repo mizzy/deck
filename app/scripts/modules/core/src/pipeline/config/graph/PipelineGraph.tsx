@@ -414,33 +414,33 @@ export class PipelineGraph extends React.Component<IPipelineGraphProps, IPipelin
     PipelineConfigValidator.validatePipeline(pipeline).catch(() => {});
   }
 
-  public componentWillReceiveProps(nextProps: IPipelineGraphProps) {
+  public componentDidUpdate(prevProps: IPipelineGraphProps): void {
     let updateGraph = false;
     let stateOnly = true;
 
     if (
-      (nextProps.execution && this.graphStatusHash !== nextProps.execution.graphStatusHash) ||
-      nextProps.execution !== this.props.execution
+      (this.props.execution && this.graphStatusHash !== this.props.execution.graphStatusHash) ||
+      this.props.execution !== prevProps.execution
     ) {
-      this.graphStatusHash = nextProps.execution.graphStatusHash;
+      this.graphStatusHash = this.props.execution.graphStatusHash;
       updateGraph = true;
       stateOnly = false;
     }
 
-    if (nextProps.pipeline !== this.props.pipeline) {
+    if (this.props.pipeline !== prevProps.pipeline) {
       updateGraph = true;
       stateOnly = false;
-      if (this.props.shouldValidate) {
-        this.validatePipeline(nextProps.pipeline);
+      if (prevProps.shouldValidate) {
+        this.validatePipeline(this.props.pipeline);
       }
     }
 
-    if (nextProps.viewState !== this.props.viewState) {
+    if (this.props.viewState !== prevProps.viewState) {
       updateGraph = true;
     }
 
     if (updateGraph) {
-      this.updateGraph(nextProps, stateOnly);
+      this.updateGraph(this.props, stateOnly);
     }
   }
 

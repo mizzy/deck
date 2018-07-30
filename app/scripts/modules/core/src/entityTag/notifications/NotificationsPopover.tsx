@@ -110,8 +110,8 @@ export class NotificationsPopover extends React.Component<INotificationsPopoverP
     return { notifications, count, severity };
   }
 
-  public componentWillReceiveProps(nextProps: INotificationsPopoverProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public handleEditNotification(notification: INotification): void {

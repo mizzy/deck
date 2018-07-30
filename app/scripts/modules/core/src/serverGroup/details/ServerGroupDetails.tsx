@@ -49,10 +49,10 @@ export class ServerGroupDetails extends React.Component<IServerGroupDetailsProps
     });
   }
 
-  public componentWillReceiveProps(nextProps: IServerGroupDetailsProps): void {
-    if (nextProps.serverGroup !== this.props.serverGroup) {
-      this.props
-        .detailsGetter(nextProps, this.autoClose)
+  public componentDidUpdate(prevProps: IServerGroupDetailsProps): void {
+    if (this.props.serverGroup !== prevProps.serverGroup) {
+      prevProps
+        .detailsGetter(this.props, this.autoClose)
         .takeUntil(this.destroy$)
         .subscribe(this.updateServerGroup);
     }

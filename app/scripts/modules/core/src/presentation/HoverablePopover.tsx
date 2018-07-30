@@ -187,8 +187,8 @@ class PopoverOffset extends React.Component<IPopoverOffsetProps, IPopoverOffsetS
     this.setState(this.getState(this.props));
   }
 
-  public componentWillReceiveProps(newProps: IPopoverOffsetProps) {
-    this.setState(this.getState(newProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public getState(props: IPopoverOffsetProps): IPopoverOffsetState {

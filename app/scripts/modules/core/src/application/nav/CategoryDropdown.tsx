@@ -42,12 +42,12 @@ export class CategoryDropdown extends React.Component<ICategoryDropdownProps, IC
     this.configureSubscriptions(this.props);
   }
 
-  public componentWillReceiveProps(nextProps: ICategoryDropdownProps) {
-    if (nextProps.activeCategory === this.props.category) {
+  public componentDidUpdate(prevProps: ICategoryDropdownProps): void {
+    if (this.props.activeCategory === prevProps.category) {
       this.close();
     }
     this.clearSubscriptions();
-    this.configureSubscriptions(nextProps);
+    this.configureSubscriptions(this.props);
   }
 
   private configureSubscriptions(props: ICategoryDropdownProps) {

@@ -43,8 +43,8 @@ export class CanaryScore extends React.Component<ICanaryScoreProps, ICanaryScore
     };
   }
 
-  public componentWillReceiveProps(props: ICanaryScoreProps) {
-    this.setState(this.getLabelState(props));
+  public componentDidUpdate(): void {
+    this.setState(this.getLabelState(this.props));
   }
 
   public render() {

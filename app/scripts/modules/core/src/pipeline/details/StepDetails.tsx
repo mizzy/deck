@@ -50,7 +50,7 @@ export class StepDetails extends React.Component<IStepDetailsProps, IStepDetails
     return { configSections, executionDetailsSections, provider, sourceUrl };
   }
 
-  public componentWillReceiveProps() {
+  public componentDidUpdate(): void {
     this.setState(this.getState());
   }
 

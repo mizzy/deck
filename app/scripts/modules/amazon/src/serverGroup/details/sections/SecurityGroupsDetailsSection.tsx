@@ -50,8 +50,8 @@ export class SecurityGroupsDetailsSection extends React.Component<
     });
   };
 
-  public componentWillReceiveProps(nextProps: IAmazonServerGroupDetailsSectionProps): void {
-    this.setState({ securityGroups: this.getSecurityGroups(nextProps) });
+  public componentDidUpdate(): void {
+    this.setState({ securityGroups: this.getSecurityGroups(this.props) });
   }
 
   public render(): JSX.Element {

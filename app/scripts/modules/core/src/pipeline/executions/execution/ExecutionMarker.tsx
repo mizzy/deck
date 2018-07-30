@@ -59,8 +59,8 @@ export class ExecutionMarker extends React.Component<IExecutionMarkerProps, IExe
     );
   }
 
-  public componentWillReceiveProps(nextProps: IExecutionMarkerProps) {
-    this.runningTime.checkStatus(nextProps.stage);
+  public componentDidUpdate(): void {
+    this.runningTime.checkStatus(this.props.stage);
   }
 
   public componentWillUnmount() {

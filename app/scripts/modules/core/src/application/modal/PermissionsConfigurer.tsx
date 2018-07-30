@@ -42,8 +42,8 @@ export class PermissionsConfigurer extends React.Component<IPermissionsConfigure
     }
   }
 
-  public componentWillReceiveProps(nextProps: IPermissionsConfigurerProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   private getState(props: IPermissionsConfigurerProps): IPermissionsConfigurerState {

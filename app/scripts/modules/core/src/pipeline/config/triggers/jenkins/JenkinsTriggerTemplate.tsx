@@ -95,8 +95,9 @@ export class JenkinsTriggerTemplate extends React.Component<
     this.initialize();
   }
 
-  public componentWillReceiveProps(nextProps: ITriggerTemplateComponentProps) {
-    if (nextProps.command !== this.props.command) {
+
+  public componentDidUpdate(prevProps: ITriggerTemplateComponentProps) {
+    if (this.props.command !== prevProps.command) {
       this.initialize();
     }
   }

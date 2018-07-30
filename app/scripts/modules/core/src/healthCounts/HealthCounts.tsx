@@ -57,9 +57,9 @@ export class HealthCounts extends React.Component<IHealthCountsProps, IHealthCou
     return { percentLabel, statusClass, total };
   }
 
-  public componentWillReceiveProps(nextProps: IHealthCountsProps): void {
-    if (!isEqual(nextProps.container, this.props.container)) {
-      this.setState(this.calculatePercent(nextProps.container));
+  public componentDidUpdate(prevProps: IHealthCountsProps): void {
+    if (!isEqual(this.props.container, prevProps.container)) {
+      this.setState(this.calculatePercent(this.props.container));
     }
   }
 

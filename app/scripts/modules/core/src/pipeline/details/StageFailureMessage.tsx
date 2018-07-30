@@ -65,8 +65,8 @@ export class StageFailureMessage extends React.Component<IStageFailureMessagePro
     return { failedTask: undefined, isFailed: false };
   }
 
-  public componentWillReceiveProps(nextProps: IStageFailureMessageProps) {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public render() {

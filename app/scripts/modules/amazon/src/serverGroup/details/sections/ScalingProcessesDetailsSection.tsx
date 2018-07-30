@@ -51,8 +51,8 @@ export class ScalingProcessesDetailsSection extends React.Component<
     return { autoScalingProcesses, scalingPoliciesDisabled, scheduledActionsDisabled };
   }
 
-  public componentWillReceiveProps(nextProps: IAmazonServerGroupDetailsSectionProps): void {
-    this.setState(this.getState(nextProps));
+  public componentDidUpdate(): void {
+    this.setState(this.getState(this.props));
   }
 
   public render(): JSX.Element {
