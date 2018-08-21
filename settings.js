@@ -47,7 +47,7 @@ window.spinnakerSettings = {
     aws: {
       defaults: {
         account: 'test',
-        region: 'us-east-1',
+        region: 'ap-northeast-1',
         iamRole: 'BaseIAMRole',
       },
       defaultSecurityGroups: [],
