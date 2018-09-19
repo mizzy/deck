@@ -1,5 +1,7 @@
 'use strict';
 
+// Branch: ap-northeast-1
+
 var gateHost = '{%gate.baseUrl%}';
 var bakeryDetailUrl = gateHost + '/bakery/logs/{{context.region}}/{{context.status.resourceId}}';
 var authEndpoint = gateHost + '/auth/user';
